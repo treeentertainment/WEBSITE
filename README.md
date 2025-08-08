@@ -11,8 +11,3 @@
 # 서비스 약관
 
 > [terms](https://appwebsite.tech/terms.html)
-
-# 사이트 목적
-
-1. TREE CAFE 및 TREE ENTERTAINMENT 관련 서비스를 쉽게 이용하기 위해서 개설 되었습니다.
-2. 관리자 및 가게 주인을 위한 편리한 POS SYSTEMS 및 KIOSK SYSTEMS
