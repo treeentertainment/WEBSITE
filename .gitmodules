@@ -1,0 +1,4 @@
+[submodule "kiosk/android"]
+    path = kiosk/android
+    url = https://github.com/treeentertainment/KIOSK-ANDROID
+    branch = main
