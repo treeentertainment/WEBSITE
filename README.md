@@ -6,8 +6,8 @@
 
 # 개인정보 처리 방침
 
-> [privacy](https://appwebsite.tech/privacy.html)
+> [privacy](./privacy.html)
 
 # 서비스 약관
 
-> [terms](https://appwebsite.tech/terms.html)
+> [terms](./terms.html)
