@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인 처리 중...</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #4285F4, #34A853);
+      color: white;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      padding: 2rem 3rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .spinner {
+      margin: 2rem auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-top: 5px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="status">구글 로그인 완료</h1>
+    <div class="spinner"></div>
+    <p id="msg">잠시 후 앱으로 돌아갑니다...</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+
+    if (code) {
+      // 앱으로 전달
+      window.location.href = `treekioskv4://auth?code=${code}&state=${state}`;
+
+      // 몇 초 뒤에 창 닫기 시도
+      setTimeout(() => {
+        window.close();
+        document.getElementById("msg").innerText = "브라우저 창을 닫아주세요.";
+      }, 2000);
+    } else {
+      document.getElementById("status").innerText = "로그인 실패";
+      document.querySelector(".spinner").style.display = "none";
+      document.getElementById("msg").innerText = "code 파라미터가 없습니다.";
+    }
+  </script>
+</body>
+</html>
