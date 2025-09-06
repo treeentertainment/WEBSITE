@@ -80,7 +80,7 @@ TREE ENTERTAINMENT(이하 '회사'라 함)은 개인정보 보호법 제30조에
 
 - 개인정보 열람청구 접수·처리 부서
   - 부서명: 고객센터
-  - 담당자: moonlight
+  - 담당자: CEO
   - 연락처: contact@treeentertainment.tech
 
 ## 제12조 (권익침해 구제방법)
